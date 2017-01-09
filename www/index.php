@@ -92,6 +92,7 @@ if ($row_cnt > 0):
 	<ul class="reviews-and-counts-grid">
 	<li><img src="../images/eye-icon.png" /><p>0</p></li>
 	</ul>
+	<a class="add-cart-style-grid"></a>
 	<p class="style-price-grid"><strong>'.$row["price"].'</strong> грн.</p>
 	<div class="mini-features">'.$row["mini_features"].'</div>
 	</li>';
