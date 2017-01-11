@@ -7,7 +7,7 @@
 <!--Список с навигацией-->
 <ul id="header-top-menu">
 
-<li>Ваш собственный  - <span>КОМИССИОННЫЙ </span></li>
+<li>Ваш собственный  - <span>МАГАЗИН </span></li>
 <li><a href="o-nas.php">О нас</a></li>
 <li><a href="yslovia.php">Условия</a></li>
 <li><a href="contacts.php">Контакты</a></li>
@@ -49,6 +49,7 @@
 <li><img src="../images/by.png" /><a href="">Б/У вещи</a></li>
 <li><img src="../images/sale1.jpg"/><a href="">Акции</a></li>
 </ul>
+<p align="right" id="block-basket"><img src="../images/cart-icon.png" /><a href"">Корзина пуста</p>
 <div id="nav-line"></div>
 
 </div>
