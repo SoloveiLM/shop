@@ -1,4 +1,34 @@
-﻿
+﻿<?php
+include("include/db_connect.php");
+$sorting = $_GET["sort"];
+switch ($sorting)
+{
+	case 'price-asc';
+	$sorting = 'price ASC';
+	$sort_name = 'От дешовых к дорогим';
+	break;
+	
+	case 'price-desc';
+	$sorting = 'price DESC';
+	$sort_name = 'От дорогих к дешовым';
+	break;
+	
+	case 'brand';
+	$sorting = 'brand ASC';
+	$sort_name = 'От А до Я';
+	break;
+	
+	case 'brand';
+	$sorting = 'brand ASC';
+	$sort_name = 'От Я до А';
+	break;
+	
+	default:
+	$sorting = 'products_id DESC';
+	$sort_name = 'Нет сортировки';
+	break;
+	}
+?>
 <!doctype html>
 <html>
 <head>
@@ -9,6 +39,7 @@
 <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
 <script type="text/javascript" src="../js/shop-script.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
 <title>Интернет-магазин</title>
 </head>
 
@@ -41,10 +72,10 @@
 <li><a id="select-sort">Без сортировки</a>
 
 <ul id="sorting-list">
-<li a href="">От дешовых к дорогим</li>
-<li a href="">От дорогих к дешовым</li>
-<li a href="">От А до Я</li>
-<li a href="">От Я до А</li>
+<li a href="index.php?sort=price-asc">От дешовых к дорогим</li>
+<li a href="index.php?sort=price-desc">От дорогих к дешовым</li>
+<li a href="index.php?sort=brand1">От А до Я</li>
+<li a href="index.php?sort=brand2">От Я до А</li>
 </ul>
 
 </li>
