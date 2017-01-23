@@ -1,4 +1,21 @@
-﻿<div id="block-parameter">
+﻿<script type="text/javascript">
+$(document).ready(function(){
+	$('#blocktrackbar').trackbar({
+		onMove:function(){
+			document.getElementById("start-price").value=this.leftValue;
+			document.getElementById("end-price").value=this.rightValue;
+			},
+			width:160,
+			leftLimit:10,
+			leftValue:10,
+			rightLimit:1000,
+			rightValue:100,
+			roundUp:100
+		});
+	});
+</script>
+
+<div id="block-parameter">
 <p class="header-title">Поиск по параметрам</p>
 <p class="title-filter">Стоимость</p>
 <form method="GET" action="search-filter.php">
@@ -14,18 +31,20 @@
 
 <div id="blocktrackbar"></div>
 
-<p class="title-filter">Размер одежды</p>
-<ul class="checkbox-size">
-<li><input type="checkbox" id="checkboxxs"/><label fot="checkboxxs">XS</label></li>
-<li><input type="checkbox" id="checkboxs"/><label fot="checkboxs">S</label></li>
-<li><input type="checkbox" id="checkboxm"/><label fot="checkboxm">M</label></li>
-<li><input type="checkbox" id="checkboxl"/><label fot="checkboxl">L</label></li>
-<li><input type="checkbox" id="checkboxxl"/><label fot="checkboxxl">XL</label></li>
-<li><input type="checkbox" id="checkboxxxl"/><label fot="checkboxxxl">XXL</label></li>
-<li><input type="checkbox" id="checkboxxxxl"/><label fot="checkboxxxxl">XXXL</label></li>
+<p class="title-filter">Вид товара</p>
+<ul class="checkbox-brand">
+<li><input type="checkbox" id="checkboxf"/><label fot="checkboxf">футболки</label></li>
+<li><input type="checkbox" id="checkboxs"/><label fot="checkboxs">шорты</label></li>
+<li><input type="checkbox" id="checkboxh"/><label fot="checkboxh">штаны</label></li>
+<li><input type="checkbox" id="checkboxr"/><label fot="checkboxr">рубашки</label></li>
+<li><input type="checkbox" id="checkboxc"/><label fot="checkboxc">свитера</label></li>
+<li><input type="checkbox" id="checkboxk"/><label fot="checkboxk">костюмы</label></li>
+<li><input type="checkbox" id="checkboxkm"/><label fot="checkboxkm">комбинизоны</label></li>
+<li><input type="checkbox" id="checkboxp"/><label fot="checkboxp">платья</label></li>
+<li><input type="checkbox" id="checkboxv"/><label fot="checkboxv">верхняя одежда</label></li>
 </ul>
 
-<center><input type="submit" name="submit" id="button-param-search" value="" /></center>
+<center><input type="submit" name="submit" id="button-param-search" value="Найти" /></center>
 </form>
 
 

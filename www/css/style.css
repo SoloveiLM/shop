@@ -232,9 +232,13 @@
 #block-category > ul > li a:hover{
 	background-color: #EEEEEE;
 }
+#block-category > ul > li a.active{
+	background-color: #EEEEEE;
+}
 .category-section{
 	margin-left: 25px;
 	margin-bottom: 5px;
+	display:none;
 }
 .category-section li{
 	margin-top: 3px;
@@ -282,19 +286,19 @@
 }
 #blocktrackbar{
 	width:220px;
-	height:20px;
-	border:1px solid black;
+	height:35px;
 	margin-top: 20px;
+	padding-top:5px;
 	margin-left:0px;
 	clear: both;
 }
-.checkbox-size li{
+.checkbox-brand li{
 	font: 14px sans-serif;
 	list-style:none;
 	margin-left:0px;
 	margin-top:3px;
 }
-.checkbox-size input{
+.checkbox-brand input{
 	margin-right:5px;
 	margin-top:1px;
 }

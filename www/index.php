@@ -1,51 +1,50 @@
-﻿<?php
-include("include/db_connect.php");
-$sorting = $_GET["sort"];
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equive="content-type" content="text/html" charset="utf-8">
+
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="trackbar/trackbar.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
+<script type="text/javascript" src="../js/shop-script.js"></script>
+</script>
+<script type="text/javascript" src="../trackbar/jquery.trackbar.js"></script>
+
+<title>Интернет-магазин</title>
+</head>
+
+<body>
+<?php
+
+
+  if(isset($_GET['sort'])){
+	  $sorting = $_GET['sort'];	  
 switch ($sorting)
 {
-	case 'price-asc';
+	case 'price-asc':
 	$sorting = 'price ASC';
-	$sort_name = 'От дешовых к дорогим';
+	$sort_name = 'По возростанию цены';
 	break;
 	
-	case 'price-desc';
+	case 'price-desc':
 	$sorting = 'price DESC';
-	$sort_name = 'От дорогих к дешовым';
+	$sort_name = 'По убыванию цены';
 	break;
 	
-	case 'brand';
+	case 'brand':
 	$sorting = 'brand ASC';
-	$sort_name = 'От А до Я';
-	break;
-	
-	case 'brand';
-	$sorting = 'brand ASC';
-	$sort_name = 'От Я до А';
+	$sort_name = 'По алфавиту';
 	break;
 	
 	default:
 	$sorting = 'products_id DESC';
 	$sort_name = 'Нет сортировки';
 	break;
-	}
-?>
-<!doctype html>
-<html>
-<head>
-<meta http-equive="content-type" content="text/html" charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link href="css/reset.css" rel="stylesheet" type="text/css">
-<link href="css/style.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
-<script type="text/javascript" src="../js/shop-script.js"></script>
-<script type="text/javascript" src="../js/jquery.cookie.js"></script>
-<title>Интернет-магазин</title>
-</head>
-
-<body>
-<?php
-   include("include/db_connect.php");
+}}else{$sorting='products_id DESC';
+	$sort_name='Без сортировки';}
 ?>
 
 <div id="block-dody">
@@ -69,13 +68,12 @@ switch ($sorting)
 <li><img id="style-grid" src="../images/icon-grid1.png"></li>
 <li><img id="style-list" src="../images/icon-list.png"></li>
 <li>Сортировать:</li>
-<li><a id="select-sort">Без сортировки</a>
+<li><a id="select-sort"><?php echo $sort_name; ?></a>
 
 <ul id="sorting-list">
-<li a href="index.php?sort=price-asc">От дешовых к дорогим</li>
-<li a href="index.php?sort=price-desc">От дорогих к дешовым</li>
-<li a href="index.php?sort=brand1">От А до Я</li>
-<li a href="index.php?sort=brand2">От Я до А</li>
+<li a href="index.php?sort=price-asc">По возростанию цены</li>
+<li a href="index.php?sort=price-desc">По убыванию цены</li>
+<li a href="index.php?sort=brand">По алфавиту</li>
 </ul>
 
 </li>
@@ -146,8 +144,8 @@ if (mysqli_num_rows($result) > 0)
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
-$db->query( "SET CHARSET utf8" );
-$query = "SELECT * FROM table_products";
+#$db->query( "SET CHARSET utf8" );
+$query = "SELECT * FROM table_products WHERE visible='1' ORDER BY $sorting";
 $result = mysqli_query($db, $query);
 $row_cnt = mysqli_num_rows($result);
 
@@ -185,7 +183,7 @@ if (mysqli_num_rows($result) > 0)
 	
 	
 	<ul class="reviews-and-counts-list">
-	<li><img src="images/eye-icon.png" /><p>0</p></li>
+	<li><img src="images/eye.png" /><p>0</p></li>
 	</ul>
 	<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 	
@@ -207,6 +205,6 @@ if (mysqli_num_rows($result) > 0)
 ?>
 </ul>
 </div>
-</div>
+
 </body>
 </html>
