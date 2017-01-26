@@ -19,7 +19,6 @@
 #block-content{
 	width: 800px;
 	height: auto;
-	border: 1px solid black;
 	border-top:1px solid #EEEEEE;
 }
 #header-top-block{
@@ -147,7 +146,7 @@
 }
 #top-menu li{
 	float:left;
-	margin-left: 20px;
+	margin-left: 5px;
 	text-decoration:none;
 	margin-top: 0px;
 	list-style:none;
@@ -305,7 +304,6 @@
 #button-param-search{
 	width:81px;
 	height:27px;
-	background: url(../images/search.jpg);
 	margin-top: 20px;
 	cursor:pointer;
 }
@@ -431,6 +429,7 @@
 	    height:230px;
 		float:left;
 		margin-right:15px;
+				
 	}
 	.reviews-and-counts-grid{
 		height:20px;
@@ -450,6 +449,7 @@
 	}
 	.reviews-and-counts-grid > li > img{
 		position:absolute;
+		
 	}
 	.style-price-grid{
 		font:16px sans-serif;
@@ -471,13 +471,13 @@
 		float:left;
 		margin-top:8px;
 		margin-right:10px;
-		background:url();
+		background:url(../images/layout_squares_small.png);
 	}
 	.add-cart-style-grid:hover{
-		background:url();
+		background:url(../images/database.png);
 	}
 	.add-cart-style-grid:active{
-		background:url();
+		background:url(../images/grid.png);
 	}
 	.mini-features{
 		font:14px/16px sans-serif;
@@ -537,13 +537,13 @@
 		float:left;
 		margin-top:8px;
 		margin-right:10px;
-		background:url();
+		background:url(../images/page_writing.png);
 	}
 	.add-cart-style-list:hover{
-		background:url();
+		background:url(../images/pages.png);
 	}
 	.add-cart-style-list:active{
-		background:url();
+		background:url(../images/list.png);
 	}
 	.style-price-list{
 		font:15px sans-serif;

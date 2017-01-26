@@ -43,13 +43,13 @@
 </div>
 <ul>
 <div id="top-menu">
-<li><img src="../images/shop.jpg" /><a href="index.php">Главная</a></li>  
-<li><img src="../images/new.jpg"/><a href="">Новые вещи</a></li>
-<li><img src="../images/procat.png" /><a href="">Вещи на прокат</a></li>
-<li><img src="../images/by.png" /><a href="">Б/У вещи</a></li>
-<li><img src="../images/sale1.jpg"/><a href="">Акции</a></li>
+<li><img src="images/folder_upload.png" /><a href="index.php">Главная</a></li>  
+<li><img src="images/check_mark.png"/><a href="">Новые вещи</a></li>
+<li><img src="images/fullscreen.png" /><a href="">Вещи на прокат</a></li>
+<li><img src="images/edit.png" /><a href="">Б/У вещи</a></li>
+<li><img src="images/star.png"/><a href="">Акции</a></li>
 </ul>
-<p align="right" id="block-basket"><img src="../images/cart-icon.png" /><a href"">Корзина пуста</p>
+<p align="right" id="block-basket"><img src="images/shopping_cart.png" /><a href"">Корзина пуста</p>
 <div id="nav-line"></div>
 
 </div>

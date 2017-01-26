@@ -65,8 +65,8 @@ switch ($sorting)
 
 <ul id="options-list">
 <li>Вид:</li>
-<li><img id="style-grid" src="../images/icon-grid1.png"></li>
-<li><img id="style-list" src="../images/icon-list.png"></li>
+<li><img id="style-grid" src="images/layout_squares_small.png"></li>
+<li><img id="style-list" src="images/page_writing.png"></li>
 <li>Сортировать:</li>
 <li><a id="select-sort"><?php echo $sort_name; ?></a>
 
@@ -82,6 +82,8 @@ switch ($sorting)
 <ul id="block-tovar-grid">
 <?php
 
+
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
 $db->query( "SET CHARSET utf8" );
@@ -95,9 +97,9 @@ if (mysqli_num_rows($result) > 0)
 	do
 	{
 
-	if ($row["image"] != "" && file_exists(" ./uploads_images/".$row["image"]))
+	if ($row["image"] != "" && file_exists("uploads_images".$row["image"]))
 	{
-		$img_path ='../uploads_images/'.$row["image"];        
+		$img_path ='../uploads_images'.$row["image"];        
 		$max_width=100;
 	    $max_height=100;
 	    list($width, $height) = getimagesize($img_path);
@@ -110,7 +112,7 @@ if (mysqli_num_rows($result) > 0)
 	}
 	else
 		{	
-		$img_path="../images/no-image163x163.jpg";
+		$img_path="images/no-image.jpg";
 		$width=163;
 	    $height=163;
 		}
@@ -122,7 +124,7 @@ if (mysqli_num_rows($result) > 0)
 	</div>
 	<p class="style-title-grid"><a href="">'.$row["title"].'</a></p>
 	<ul class="reviews-and-counts-grid">
-	<li><img src="../images/eye-icon.png" /><p>0</p></li>
+	<li><img src="images/view.png" /><p>0</p></li>
 	</ul>
 	<a class="add-cart-style-grid"></a>
 	<p class="style-price-grid"><strong>'.$row["price"].'</strong> грн.</p>
@@ -170,7 +172,7 @@ if (mysqli_num_rows($result) > 0)
 	}
 	else
 		{	
-		$img_path="../images/no-image.jpg";
+		$img_path="images/no-image.jpg";
 		$width=100;
 	    $height=100;
 		}
@@ -183,7 +185,7 @@ if (mysqli_num_rows($result) > 0)
 	
 	
 	<ul class="reviews-and-counts-list">
-	<li><img src="images/eye.png" /><p>0</p></li>
+	<li><img src="images/view.png" /><p>0</p></li>
 	</ul>
 	<p class="style-title-list"><a href="">'.$row["title"].'</a></p>
 	

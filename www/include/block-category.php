@@ -7,9 +7,9 @@
 <li><a href="view_cat.php?type=Для мужчин"><strong>Весь товар</strong></a></li>
 
 <?php
-#mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-#$db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
-#$db->query( "SET CHARSET utf8" );
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
+$db->query( "SET CHARSET utf8" );
 $query = "SELECT * FROM category WHERE  type='Для мужчин'";
 $result = mysqli_query($db, $query);
 $row_cnt = mysqli_num_rows($result);
@@ -120,9 +120,9 @@ if (mysqli_num_rows($result) > 0)
 <li><a href="view_cat.php?type=Аксессуары"><strong>Весь товар</strong></a></li>
 
 <?php
-#mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-#$db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
-#$db->query( "SET CHARSET utf8" );
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
+$db->query( "SET CHARSET utf8" );
 $query = "SELECT * FROM category WHERE  type='Аксессуары'";
 $result = mysqli_query($db, $query);
 $row_cnt = mysqli_num_rows($result);
