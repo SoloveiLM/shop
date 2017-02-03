@@ -39,21 +39,22 @@ if (mysqli_num_rows($result) > 0)
 #mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 #$db = mysqli_connect("192.168.1.34","lilia","password", "db_shop") or die ("Error");
 #$db->query( "SET CHARSET utf8" );
-$query = "SELECT * FROM category WHERE  type='Для женщин'";
+$query = "SELECT * FROM category WHERE  type=''";
 $result = mysqli_query($db, $query);
 $row_cnt = mysqli_num_rows($result);
 
-if (mysqli_num_rows($result) > 0)
+#if (mysqli_num_rows($result) > 0)
+
+if ($row_cnt > 0)
 {
+	$CNT="1";
 	$row =mysqli_fetch_array($result);	
 	do
 	{
-	
-	   echo '
-	   <li><a href="view_cat.php?cat='.strtolower($row["brand"]).'&type='.$row["type"].'">'.$row["brand"].'</a></li>';
-	
+	   echo '<li><a href="view_cat.php?cat='.strtolower($row["brand"]).'&type='.$row["type"].'">'.$row["brand"].'</a></li>';
+	   $CNT = $CNT+1;
 	}
-	while ($row =mysqli_fetch_array($result));	
+	while ($CNT = $row_cnt);
 }
  ?>
 </ul>

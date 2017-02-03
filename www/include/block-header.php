@@ -36,7 +36,7 @@
 <form method="GET" action="search.php?q=">
 
 <span></span>
-<input type="text" id="input-search" name="q" placeholder="Поиск среди товаров"/>
+<input type="text" id="input-search" name="q" placeholder="Поиск среди товаров" value="<?php echo $search ?>"/>
 <input type="submit" id="button-search" value="Поиск"/>
 </form>
 </div>
@@ -44,10 +44,10 @@
 <ul>
 <div id="top-menu">
 <li><img src="images/folder_upload.png" /><a href="index.php">Главная</a></li>  
-<li><img src="images/check_mark.png"/><a href="">Новые вещи</a></li>
-<li><img src="images/fullscreen.png" /><a href="">Вещи на прокат</a></li>
-<li><img src="images/edit.png" /><a href="">Б/У вещи</a></li>
-<li><img src="images/star.png"/><a href="">Акции</a></li>
+<li><img src="images/check_mark.png"/><a href="view_aystopper.php?go=news">Новые вещи</a></li>
+<li><img src="images/fullscreen.png" /><a href="view_aystopper.php?go=procat">Вещи на прокат</a></li>
+<li><img src="images/edit.png" /><a href="view_aystopper.php?go=b_y">Б/У вещи</a></li>
+<li><img src="images/star.png"/><a href="view_aystopper.php?go=sale">Акции</a></li>
 </ul>
 <p align="right" id="block-basket"><img src="images/shopping_cart.png" /><a href"">Корзина пуста</p>
 <div id="nav-line"></div>
